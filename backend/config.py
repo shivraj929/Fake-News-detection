@@ -1,15 +1,21 @@
-# Data Paths (relative to backend/)
-FAKE_DATA = "../data/raw/Fake.csv"
-TRUE_DATA = "../data/raw/True.csv"
-PROCESSED_DATA = "../data/processed/processed_news.csv"
+import os
 
-# Model Paths (relative to backend/)
-LOGISTIC_MODEL = "models/logistic.pkl"
-NAIVE_BAYES_MODEL = "models/naive_bayes.pkl"
-SVM_MODEL = "models/svm.pkl"
-RANDOM_FOREST_MODEL = "models/random_forest.pkl"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, ".."))
+MODELS_DIR = os.path.join(PROJECT_ROOT, "models")
 
-TFIDF_PATH = "models/tfidf.pkl"
+# Data Paths
+FAKE_DATA = os.path.join(PROJECT_ROOT, "data", "raw", "Fake.csv")
+TRUE_DATA = os.path.join(PROJECT_ROOT, "data", "raw", "True.csv")
+PROCESSED_DATA = os.path.join(PROJECT_ROOT, "data", "processed", "processed_news.csv")
+
+# Model Paths
+LOGISTIC_MODEL = os.path.join(MODELS_DIR, "logistic.pkl")
+NAIVE_BAYES_MODEL = os.path.join(MODELS_DIR, "naive_bayes.pkl")
+SVM_MODEL = os.path.join(MODELS_DIR, "svm.pkl")
+RANDOM_FOREST_MODEL = os.path.join(MODELS_DIR, "random_forest.pkl")
+
+TFIDF_PATH = os.path.join(MODELS_DIR, "tfidf.pkl")
 
 # Parameters
 TEST_SIZE = 0.2
@@ -36,3 +42,4 @@ MODELS = {
         "path": RANDOM_FOREST_MODEL,
     },
 }
+

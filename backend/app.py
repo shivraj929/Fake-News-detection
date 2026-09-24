@@ -58,7 +58,7 @@ def get_model(model_key):
 # ── Load model comparison metrics if available ─────────────────────────
 def load_metrics():
     """Load the saved model comparison CSV."""
-    metrics_path = os.path.join("..", "reports", "model_comparison.csv")
+    metrics_path = os.path.join(config.PROJECT_ROOT, "reports", "model_comparison.csv")
     if os.path.exists(metrics_path):
         df = pd.read_csv(metrics_path)
         return df.to_dict(orient="records")
@@ -217,7 +217,7 @@ if __name__ == "__main__":
     print("=" * 60)
     print("  FAKE NEWS DETECTION API")
     print("=" * 60)
-    print(f"  Models directory: {os.path.abspath('models/')}")
+    print(f"  Models directory: {config.MODELS_DIR}")
     print(f"  Available models: {list(config.MODELS.keys())}")
     print("=" * 60)
     app.run(debug=True, host="0.0.0.0", port=5000)
