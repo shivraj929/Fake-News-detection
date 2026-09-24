@@ -9,6 +9,7 @@ Flask API Backend for Fake News Detection
 import os
 import sys
 import json
+# pyrefly: ignore [missing-import]
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import joblib
